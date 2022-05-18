@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{76725D24-8997-4099-B61E-98311109394E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>KursovaRabotaShapePainter</RootNamespace>
+    <AssemblyName>KursovaRabotaShapePainter</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormCircle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCircle.Designer.cs">
+      <DependentUpon>FormCircle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRectangle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRectangle.Designer.cs">
+      <DependentUpon>FormRectangle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRhombus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRhombus.Designer.cs">
+      <DependentUpon>FormRhombus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormScene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormScene.Designer.cs">
+      <DependentUpon>FormScene.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSquare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSquare.Designer.cs">
+      <DependentUpon>FormSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTriangle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTriangle.Designer.cs">
+      <DependentUpon>FormTriangle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCircle.resx">
+      <DependentUpon>FormCircle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRectangle.resx">
+      <DependentUpon>FormRectangle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRhombus.resx">
+      <DependentUpon>FormRhombus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormScene.resx">
+      <DependentUpon>FormScene.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSquare.resx">
+      <DependentUpon>FormSquare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTriangle.resx">
+      <DependentUpon>FormTriangle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\child Triangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\child Rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\child SquareBetter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\child SquareFixed%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\child Rhombus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\child Circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\metal CircleTrue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\metal RecTrue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\metal RhombusTrue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\metal SquareTrue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\metal TriangleTrue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wooden SquareTrue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woodenTriangleTrue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wooden CircleTrue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wooden RhombusTrue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wooden ReactangleTrue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShapesLibrary\ShapesLibrary.csproj">
+      <Project>{e3cb303c-9ab8-490b-805b-2d84623d9ba5}</Project>
+      <Name>ShapesLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

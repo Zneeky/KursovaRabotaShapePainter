@@ -1,0 +1,86 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using ShapesLibrary;
+
+namespace KursovaRabotaStandartnoZadanieEtap1
+{
+    public partial class FormSquare : Form
+    {
+        private Square _square;
+
+        public Square Square
+        {
+            get
+            {
+                return _square;
+            }
+            set
+            {
+                _square = value;
+                textBoxSide.Text = _square.Side.ToString();
+                buttonColor.BackColor = _square.ColorBorder;
+            }
+        }
+        public FormSquare()
+        {
+            InitializeComponent();
+        }
+
+        private void buttonOK_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Square.Side = int.Parse(textBoxSide.Text);
+                Square.ColorBorder = buttonColor.BackColor;
+            }
+            catch
+            {
+                MessageBox.Show("Invalid value!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DialogResult = DialogResult.OK;
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+        }
+
+        private void buttonColor_Click(object sender, EventArgs e)
+        {
+            var cd = new ColorDialog();
+            if (cd.ShowDialog() == DialogResult.OK)
+            {
+
+                buttonColor.BackColor = cd.Color;
+            }
+        }
+
+        Color zcolor(int r, int g, int b)
+        {
+
+            return Color.FromArgb(r, g, b);
+        }
+
+        public void DarkTheme()
+        {
+            this.BackColor = zcolor(48, 48, 51);
+            this.ForeColor = zcolor(255, 183, 0);
+
+            textBoxSide.ForeColor = zcolor(255, 183, 0);
+            textBoxSide.BackColor = zcolor(100, 100, 107);
+
+            buttonCancel.BackColor = zcolor(100, 100, 107);
+            buttonOK.BackColor = zcolor(100, 100, 107);
+
+
+        }
+    }
+}
