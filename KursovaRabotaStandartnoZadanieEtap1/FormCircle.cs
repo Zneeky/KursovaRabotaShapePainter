@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using ShapesLibrary;
 
 
-namespace KursovaRabotaStandartnoZadanieEtap1
+namespace KursovaRabotaShapePainter
 {
     public partial class FormCircle : Form
     {

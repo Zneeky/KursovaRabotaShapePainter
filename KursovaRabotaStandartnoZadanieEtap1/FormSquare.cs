@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ShapesLibrary;
 
-namespace KursovaRabotaStandartnoZadanieEtap1
+namespace KursovaRabotaShapePainter
 {
     public partial class FormSquare : Form
     {

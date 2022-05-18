@@ -12,7 +12,7 @@ using ShapesLibrary.Exceptions;
 
 using Rectangle = ShapesLibrary.Rectangle;
 
-namespace KursovaRabotaStandartnoZadanieEtap1
+namespace KursovaRabotaShapePainter
 {
     public partial class FormRectangle : Form
     {

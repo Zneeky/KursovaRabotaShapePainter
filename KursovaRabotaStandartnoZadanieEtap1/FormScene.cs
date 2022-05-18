@@ -15,7 +15,7 @@ using ShapesLibrary;
 
 using Rectangle = ShapesLibrary.Rectangle;
 
-namespace KursovaRabotaStandartnoZadanieEtap1
+namespace KursovaRabotaShapePainter
 {
     
     public partial class FormScene : Form,IGraphics

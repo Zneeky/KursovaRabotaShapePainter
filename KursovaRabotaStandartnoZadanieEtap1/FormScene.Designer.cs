@@ -1,5 +1,5 @@
 ﻿
-namespace KursovaRabotaStandartnoZadanieEtap1
+namespace KursovaRabotaShapePainter
 {
     partial class FormScene
     {
@@ -99,7 +99,7 @@ namespace KursovaRabotaStandartnoZadanieEtap1
             this.btn_circle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_circle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_circle.ForeColor = System.Drawing.Color.White;
-            this.btn_circle.Image = global::KursovaRabotaStandartnoZadanieEtap1.Properties.Resources.child_Circle;
+            this.btn_circle.Image = global::KursovaRabotaShapePainter.Properties.Resources.child_Circle;
             this.btn_circle.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_circle.Location = new System.Drawing.Point(302, 3);
             this.btn_circle.Name = "btn_circle";
@@ -118,7 +118,7 @@ namespace KursovaRabotaStandartnoZadanieEtap1
             this.btn_rhomb.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_rhomb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_rhomb.ForeColor = System.Drawing.Color.White;
-            this.btn_rhomb.Image = global::KursovaRabotaStandartnoZadanieEtap1.Properties.Resources.child_Rhombus;
+            this.btn_rhomb.Image = global::KursovaRabotaShapePainter.Properties.Resources.child_Rhombus;
             this.btn_rhomb.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_rhomb.Location = new System.Drawing.Point(227, 3);
             this.btn_rhomb.Name = "btn_rhomb";
@@ -137,7 +137,7 @@ namespace KursovaRabotaStandartnoZadanieEtap1
             this.btn_square.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_square.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_square.ForeColor = System.Drawing.Color.White;
-            this.btn_square.Image = global::KursovaRabotaStandartnoZadanieEtap1.Properties.Resources.child_SquareFixed_1_;
+            this.btn_square.Image = global::KursovaRabotaShapePainter.Properties.Resources.child_SquareFixed_1_;
             this.btn_square.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_square.Location = new System.Drawing.Point(152, 3);
             this.btn_square.Name = "btn_square";
@@ -156,7 +156,7 @@ namespace KursovaRabotaStandartnoZadanieEtap1
             this.btn_rectangle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_rectangle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_rectangle.ForeColor = System.Drawing.Color.White;
-            this.btn_rectangle.Image = global::KursovaRabotaStandartnoZadanieEtap1.Properties.Resources.child_Rectangle;
+            this.btn_rectangle.Image = global::KursovaRabotaShapePainter.Properties.Resources.child_Rectangle;
             this.btn_rectangle.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_rectangle.Location = new System.Drawing.Point(80, 3);
             this.btn_rectangle.Name = "btn_rectangle";
@@ -175,7 +175,7 @@ namespace KursovaRabotaStandartnoZadanieEtap1
             this.btn_triangle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_triangle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_triangle.ForeColor = System.Drawing.Color.White;
-            this.btn_triangle.Image = global::KursovaRabotaStandartnoZadanieEtap1.Properties.Resources.child_Triangle;
+            this.btn_triangle.Image = global::KursovaRabotaShapePainter.Properties.Resources.child_Triangle;
             this.btn_triangle.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_triangle.Location = new System.Drawing.Point(4, 3);
             this.btn_triangle.Name = "btn_triangle";

@@ -1,5 +1,5 @@
 ﻿
-namespace KursovaRabotaStandartnoZadanieEtap1
+namespace KursovaRabotaShapePainter
 {
     partial class FormSquare
     {
