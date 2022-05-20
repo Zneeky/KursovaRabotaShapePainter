@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Drawing2D;
+using System.Drawing;  using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,10 +34,10 @@ namespace ShapesLibrary
             }
         }
 
-        public Point A = Point.Empty;
-        public Point B = Point.Empty;
-        public Point C = Point.Empty;
-        public Point D = Point.Empty;
+        private Point A = Point.Empty;
+        private Point B = Point.Empty;
+        private Point C = Point.Empty;
+        private Point D = Point.Empty;
 
 
 
@@ -92,12 +91,7 @@ namespace ShapesLibrary
         }
         public override bool PointInShape(Point point)
         {
-            //new Point(x, y),
-            //          new Point(x + (width / 2), y + (height / 2)),
-            //          new Point(x + (width), y),
-            //          new Point(x + (width / 2), y - (height / 2)),
-            //          new Point(x, y)
-
+            
              A = new Point(Location.X, Location.Y);
              B = new Point(Location.X + (Width / 2), Location.Y + (Height / 2));
              C = new Point(Location.X + Width, Location.Y);

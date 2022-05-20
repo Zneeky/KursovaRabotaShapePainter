@@ -207,12 +207,7 @@ namespace KursovaRabotaShapePainter
 
         private int CalculateShapesArea()
         {
-            //var area = 0;
-            //for (int s = 0; s < _shapes.Count; s++)
-            //{
-            //    area += _shapes[s].Area;
-            //}
-
+       
             int area = _shapes.Select(s => s.Area).Sum();
             return area;
         }
@@ -283,7 +278,8 @@ namespace KursovaRabotaShapePainter
                         {
                             if (_shapes[s].PointInShape(e.Location))
                             {
-                                _shapes[s].Selected = true;
+                             _mouseDownLocation = e.Location;
+                             _shapes[s].Selected = true;
                                 moving = true;
                                 break;
                             }
@@ -301,27 +297,19 @@ namespace KursovaRabotaShapePainter
         private void FormScene_MouseMove(object sender, MouseEventArgs e)
         {
             //TO DO: optimaze the code below:
+            
             if (moving)
             {
+                
                 for (int s = _shapes.Count - 1; s >= 0; s--)
                 {
                    
                     if (_shapes[s].Selected == true)
                     {
-                        if (_shapes[s].Tag == "triangle")
-                        {
-                            _mouseDownLocation = _shapes[s].Location;
-                            _shapes[s].Move(_mouseDownLocation.X, _mouseDownLocation.Y, e.Location.X, e.Location.Y);
-                           
-                        }              
-                        else
-                        {
-                            _shapes[s].Move(_mouseDownLocation.X, _mouseDownLocation.Y, e.Location.X, e.Location.Y);
-                            _mouseDownLocation = e.Location;
-                        }
-
-                        Invalidate();                       
-                        break;
+                        _shapes[s].Move(_mouseDownLocation.X, _mouseDownLocation.Y, e.Location.X, e.Location.Y);
+                        _mouseDownLocation = e.Location;
+                                      
+                        Invalidate();                            
                     }
                 }
             }
@@ -664,6 +652,7 @@ namespace KursovaRabotaShapePainter
                 .Where(shape => shape.Location.X > Width / 2)
                 .ToList();
             SelectShapes(selected);
+            
 
         }
 
