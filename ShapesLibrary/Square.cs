@@ -37,7 +37,7 @@ namespace ShapesLibrary
         {
             get
             {
-                return (int)(CalculateArea() /1444);
+                return (int)(CalculateArea() / 1428);
             }
         }
 
@@ -48,17 +48,6 @@ namespace ShapesLibrary
         {
             var colorBorder = Selected ? Color.Red : ColorBorder;
             var colorFill = Color.FromArgb(100, ColorBorder);
-            //using (var brush = new SolidBrush(colorFill))
-            //{
-            //    graphics.FillRectangle(brush, Location.X, Location.Y, Side, Side);
-            //}
-
-            //using (var pen = new Pen(colorBorder))
-            //{
-            //    pen.Width = 3;
-            //    graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            //    graphics.DrawRectangle(pen, Location.X, Location.Y, Side, Side);
-            //}
             graphics.DrawSquare(colorBorder, colorFill, Location.X, Location.Y, Side);
         }
 

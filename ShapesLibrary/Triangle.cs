@@ -27,7 +27,7 @@ namespace ShapesLibrary
         {
             get
             {
-                return (int)(CalculateArea() / 1444);
+                return (int)(CalculateArea() / 1428);
             }
         }
 
@@ -39,115 +39,32 @@ namespace ShapesLibrary
         {
             var colorBorder = Selected ? Color.Red : ColorBorder;
             var colorFill = Color.FromArgb(100, ColorBorder);
-            //using (var brush=new SolidBrush(colorFill))
-            //{
-            //    Point[] triaglePoints = new Point[] { p2, p3, Location };
-            //    graphics.FillPolygon(brush, triaglePoints);
-            //}
-            //using(var pen = new Pen(colorBorder))
-            //{
-            //    pen.Width = 3;
-            //    graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-
-            //    graphics.DrawLine(pen, p2, p3);
-            //    graphics.DrawLine(pen, p2, Location);
-            //    graphics.DrawLine(pen, Location, p3);
-
-            //}
             graphics.DrawTriangle(colorBorder, colorFill, p2.X, p2.Y, p3.X, p3.Y, Location.X, Location.Y);
         }
 
-        public override void Move (int mouseX, int mouseY,int eX, int eY)
+        public override void Move (int mDX, int mDY,int eX, int eY)
         {
 
-            int X =eX-mouseX;
-            int Y =eY-mouseY;
-            int speedX = Math.Abs(mouseX - eX);
-            int speedY = Math.Abs(mouseY - eY);
+            int changeX =eX- mDX;
+            int changeY =eY- mDY;
 
-
-            if (X > 0)
+            Location = new Point
             {
-                Location = new Point
-                {
-                    X = Location.X + speedX,
-                    Y = Location.Y
-                };
-                p2 = new Point
-                {
-
-                    X = p2.X + speedX,
-                    Y = p2.Y
-                };
-                p3 = new Point
-                {
-
-                    X = p3.X + speedX,
-                    Y = p3.Y
-                };
-            }
-            else if (X < 0)
+                X = Location.X + changeX,
+                Y = Location.Y + changeY
+            };
+            p2 = new Point
             {
-                Location = new Point
-                {
-                    X = Location.X - speedX,
-                    Y = Location.Y
-                };
-                p2 = new Point
-                {
 
-                    X = p2.X - speedX,
-                    Y = p2.Y
-                };
-                p3 = new Point
-                {
-
-                    X = p3.X - speedX,
-                    Y = p3.Y
-                };
-            }
-
-            if (Y > 0)
+                X = p2.X + changeX,
+                Y = p2.Y + changeY
+            };
+            p3 = new Point
             {
-                Location = new Point
-                {
-                    X = Location.X,
-                    Y = Location.Y + speedY
-                };
-                p2 = new Point
-                {
 
-                    X = p2.X,
-                    Y = p2.Y + speedY
-                };
-                p3 = new Point
-                {
-
-                    X = p3.X,
-                    Y = p3.Y + speedY
-                };
-            }
-            else if (Y < 0)
-            {
-                Location = new Point
-                {
-                    X = Location.X,
-                    Y = Location.Y - speedY
-                };
-                p2 = new Point
-                {
-
-                    X = p2.X,
-                    Y = p2.Y - speedY
-                };
-                p3 = new Point
-                {
-
-                    X = p3.X,
-                    Y = p3.Y - speedY
-                };
-            }
-
+                X = p3.X + changeX,
+                Y = p3.Y + changeY
+            };
         }
         public override bool PointInShape(Point point)
         {
@@ -164,18 +81,11 @@ namespace ShapesLibrary
 
         protected override double CalculateArea()
         {
-           
-            double area = TriangleAreaFormula(Location.X,Location.Y,p2.X,p2.Y,p3.X,p3.Y);
-            return area;
+            double height = Math.Abs(Location.Y - p3.Y);
+            double width = Math.Abs(Location.X - p2.X);
+            return (height * width) / 2;
         }
 
        
-        private double TriangleAreaFormula(int x1, int y1, int x2,
-                       int y2, int x3, int y3)
-        {
-            return Math.Abs((x1 * (y2 - y3) +
-                             x2 * (y3 - y1) +
-                             x3 * (y1 - y2)) / 2.0);
-        }
     }
 }

@@ -52,7 +52,7 @@ namespace ShapesLibrary
         {
             get
             {
-                return  (int)(CalculateArea() / 1444); 
+                return (int)(CalculateArea() / 1428);
             }
         }
 
@@ -65,28 +65,6 @@ namespace ShapesLibrary
 
             var colorBorder = Selected ? Color.Red : ColorBorder;
             var colorFill = Color.FromArgb(100, ColorBorder);
-            //using (GraphicsPath myPath = new GraphicsPath())
-            //{
-                
-            //    myPath.AddLines(new[]
-            //    {
-            //      new Point(Location.X, Location.Y + (Height / 2)),
-            //      new Point(Location.X + (Width/ 2), Location.Y),
-            //      new Point(Location.X + Width, Location.Y + (Height / 2)),
-            //      new Point(Location.X +(Width/ 2), Location.Y + Height ),
-            //      new Point(Location.X, Location.Y + Height/2 )
-            //});
-                //using (var brush = new SolidBrush(colorFill))
-                //    graphics.FillPath(brush, myPath);
-                //using (Pen pen = new Pen(colorBorder))
-                //{
-                //    pen.Width = 3;
-                //    graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                //    graphics.DrawPath(pen, myPath);
-                //}
-               
-
-            //}
             graphics.DrawRhombus(colorBorder, colorFill, Location.X, Location.Y, Width, Height);
         }
         public override bool PointInShape(Point point)

@@ -21,47 +21,16 @@ namespace ShapesLibrary
             get=>_selected;
             set => _selected = value;
         }
-        public virtual void  Move(int mouseX, int mouseY, int eX, int eY)
+        public virtual void  Move(int mDX, int mDY, int eX, int eY)
         {
-            int changeX = eX - mouseX;
-            int changeY = eY - mouseY;
+            int changeX = eX - mDX;
+            int changeY = eY - mDY;
 
-            int speedX = Math.Abs(eX - mouseX);
-            int speedY = Math.Abs(eY - mouseY);
-
-            if (changeX > 0)
+            Location = new Point
             {
-                Location = new Point
-                {
-                    X = Location.X + speedX,
-                    Y = Location.Y
-                };
-            }
-            else if (changeX < 0)
-            {
-                Location = new Point
-                {
-                    X = Location.X - speedX,
-                    Y = Location.Y
-                };
-            }
-
-            if (changeY > 0)
-            {
-                Location = new Point
-                {
-                    X = Location.X,
-                    Y = Location.Y + speedY
-                };
-            }
-            else if (changeY < 0)
-            {
-                Location = new Point
-                {
-                    X = Location.X,
-                    Y = Location.Y - speedY
-                };
-            }
+                X = Location.X + changeX,
+                Y = Location.Y + changeY
+            };
 
         }
         public abstract void Paint(IGraphics graphics);

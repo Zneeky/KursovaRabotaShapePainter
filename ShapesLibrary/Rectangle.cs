@@ -49,7 +49,7 @@ namespace ShapesLibrary
         {
             get
             {
-                return (int)(CalculateArea() / 1444); 
+                return (int)(CalculateArea()/1428); 
             }
         }
 
@@ -60,18 +60,6 @@ namespace ShapesLibrary
         {
             var colorBorder = Selected ? Color.Red : ColorBorder;
             var colorFill = Color.FromArgb(100, ColorBorder);
-
-            //using (var brush = new SolidBrush(colorFill))
-            //{
-            //    graphics.FillRectangle(brush, Location.X, Location.Y, Width, Height);
-            //}
-
-            //using (var pen= new Pen(colorBorder))
-            //{
-            //    pen.Width = 3;
-            //    graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            //    graphics.DrawRectangle(pen, Location.X, Location.Y, Width, Height);
-            //}
             graphics.DrawRectangle(colorBorder, colorFill, Location.X, Location.Y, Width, Height);
         }
 
@@ -85,11 +73,11 @@ namespace ShapesLibrary
             return (Height * Width);
         }
 
-        public bool IsRectangle(Shape shape)
-        {
+        //public bool IsRectangle(Shape shape)
+        //{
 
-            return ((this==shape)&&(this!=null && shape!=null));
-        }
+        //    return ((this==shape)&&(this!=null && shape!=null));
+        //}
 
       
     }

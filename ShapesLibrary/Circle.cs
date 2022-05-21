@@ -36,7 +36,7 @@ namespace ShapesLibrary
         {
             get
             {
-                return  (int)(CalculateArea() / 1444); 
+                return (int)(CalculateArea() / 1428);
             }
         }
 
