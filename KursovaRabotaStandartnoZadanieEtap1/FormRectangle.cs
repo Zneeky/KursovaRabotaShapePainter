@@ -39,6 +39,11 @@ namespace KursovaRabotaShapePainter
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
+            if (int.Parse(textBoxWidth.Text) == 0 || int.Parse(textBoxHeight.Text)==0)
+            {
+                MessageBox.Show("Can not be 0!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             try
             {
                 Rectangle.Width = int.Parse(textBoxWidth.Text);

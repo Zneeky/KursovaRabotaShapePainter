@@ -49,6 +49,11 @@ namespace KursovaRabotaShapePainter
                 MessageBox.Show("Invalid value!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (int.Parse(textBoxWidth.Text) == 0 || int.Parse(textBoxHeight.Text) == 0)
+            {
+                MessageBox.Show("Can not be 0!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (Triangle.Location.X > Triangle.p2.X)
             {
                 if (width > int.Parse(textBoxWidth.Text))
@@ -156,9 +161,6 @@ namespace KursovaRabotaShapePainter
                         X = Triangle.p2.X,
                         Y = Triangle.p2.Y + (height - int.Parse(textBoxHeight.Text)),
                     };
-
-
-
 
                 }
                 else if (height < int.Parse(textBoxHeight.Text))

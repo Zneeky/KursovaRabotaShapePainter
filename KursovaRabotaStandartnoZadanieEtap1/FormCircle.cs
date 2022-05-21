@@ -36,6 +36,11 @@ namespace KursovaRabotaShapePainter
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
+            if (int.Parse(textBoxRadius.Text) == 0)
+            {
+                MessageBox.Show("Can not be 0!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             try
             {
                 Circle.Radius = int.Parse(textBoxRadius.Text);
