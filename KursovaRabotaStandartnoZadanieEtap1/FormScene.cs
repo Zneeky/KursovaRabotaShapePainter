@@ -389,6 +389,11 @@ namespace KursovaRabotaShapePainter
 
             if (_frameRectangle != null)
             {
+                if (_frameRectangle.Height==0|| _frameRectangle.Width==0)
+                {
+                    _frameRectangle = null;
+                    return;
+                }
                 _frameRectangle.ColorBorder = Color.FromArgb(r.Next(255), r.Next(255), r.Next(255));
 
                 Unselect();
@@ -438,6 +443,11 @@ namespace KursovaRabotaShapePainter
             }
             else if (_frameCircle != null)
             {
+                if (_frameCircle.Radius == 0)
+                {
+                    _frameRectangle = null;
+                    return;
+                }
                 _frameCircle.ColorBorder = Color.FromArgb(r.Next(255), r.Next(255), r.Next(255));
                 
                 Unselect();
@@ -451,6 +461,11 @@ namespace KursovaRabotaShapePainter
             }
             else if (_frameSquare != null)
             {
+                if (_frameSquare.Side == 0)
+                {
+                    _frameRectangle = null;
+                    return;
+                }
                 _frameSquare.ColorBorder = Color.FromArgb(r.Next(255), r.Next(255), r.Next(255));
 
                 Unselect();
@@ -564,6 +579,7 @@ namespace KursovaRabotaShapePainter
             
                 
             }
+            toolStripStatusLabelArea.Text = CalculateShapesArea().ToString();
             Invalidate();
         }
 
@@ -822,6 +838,7 @@ namespace KursovaRabotaShapePainter
         {
             Unselect();
             var shapeSmallestArea = _shapes
+                .Where(s=>s.Area>0.00001)
                 .OrderBy(s => s.Area)
                 .FirstOrDefault();
 
@@ -830,6 +847,16 @@ namespace KursovaRabotaShapePainter
                 return;
             }
             else { shapeSmallestArea.Selected = true; }
+            Invalidate();
+        }
+
+        private void deleteAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _shapes.ForEach(i => i.Selected = true);
+            _shapes = _shapes
+                .Where(s => s.Selected != true)
+                .ToList();
+            toolStripStatusLabelArea.Text = CalculateShapesArea().ToString();
             Invalidate();
         }
     }

@@ -63,6 +63,7 @@ namespace KursovaRabotaShapePainter
             this.circlesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.biggestAreaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.smallestAreaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStripSelection.SuspendLayout();
@@ -218,7 +219,8 @@ namespace KursovaRabotaShapePainter
             this.rhombsToolStripMenuItem,
             this.circlesToolStripMenuItem,
             this.biggestAreaToolStripMenuItem,
-            this.smallestAreaToolStripMenuItem});
+            this.smallestAreaToolStripMenuItem,
+            this.deleteAllToolStripMenuItem});
             this.selectToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.selectToolStripMenuItem.Name = "selectToolStripMenuItem";
             this.selectToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
@@ -410,6 +412,13 @@ namespace KursovaRabotaShapePainter
             this.smallestAreaToolStripMenuItem.Text = "SmallestArea";
             this.smallestAreaToolStripMenuItem.Click += new System.EventHandler(this.smallestAreaToolStripMenuItem_Click);
             // 
+            // deleteAllToolStripMenuItem
+            // 
+            this.deleteAllToolStripMenuItem.Name = "deleteAllToolStripMenuItem";
+            this.deleteAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteAllToolStripMenuItem.Text = "Delete All";
+            this.deleteAllToolStripMenuItem.Click += new System.EventHandler(this.deleteAllToolStripMenuItem_Click);
+            // 
             // FormScene
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,6 +489,7 @@ namespace KursovaRabotaShapePainter
         private System.Windows.Forms.ToolStripMenuItem circlesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem biggestAreaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem smallestAreaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteAllToolStripMenuItem;
     }
 }
 
