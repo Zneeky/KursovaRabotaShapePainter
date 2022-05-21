@@ -56,6 +56,13 @@ namespace KursovaRabotaShapePainter
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.trianglesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rectanglesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.squaresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rhombsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.circlesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.biggestAreaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.smallestAreaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStripSelection.SuspendLayout();
@@ -204,7 +211,14 @@ namespace KursovaRabotaShapePainter
             this.selectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.centerToolStripMenuItem,
             this.leftToolStripMenuItem,
-            this.rightToolStripMenuItem});
+            this.rightToolStripMenuItem,
+            this.trianglesToolStripMenuItem,
+            this.rectanglesToolStripMenuItem,
+            this.squaresToolStripMenuItem,
+            this.rhombsToolStripMenuItem,
+            this.circlesToolStripMenuItem,
+            this.biggestAreaToolStripMenuItem,
+            this.smallestAreaToolStripMenuItem});
             this.selectToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.selectToolStripMenuItem.Name = "selectToolStripMenuItem";
             this.selectToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
@@ -213,21 +227,21 @@ namespace KursovaRabotaShapePainter
             // centerToolStripMenuItem
             // 
             this.centerToolStripMenuItem.Name = "centerToolStripMenuItem";
-            this.centerToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.centerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.centerToolStripMenuItem.Text = "Center";
             this.centerToolStripMenuItem.Click += new System.EventHandler(this.centerToolStripMenuItem_Click);
             // 
             // leftToolStripMenuItem
             // 
             this.leftToolStripMenuItem.Name = "leftToolStripMenuItem";
-            this.leftToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.leftToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.leftToolStripMenuItem.Text = "Left";
             this.leftToolStripMenuItem.Click += new System.EventHandler(this.leftToolStripMenuItem_Click);
             // 
             // rightToolStripMenuItem
             // 
             this.rightToolStripMenuItem.Name = "rightToolStripMenuItem";
-            this.rightToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.rightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.rightToolStripMenuItem.Text = "Right";
             this.rightToolStripMenuItem.Click += new System.EventHandler(this.rightToolStripMenuItem_Click);
             // 
@@ -347,6 +361,55 @@ namespace KursovaRabotaShapePainter
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // trianglesToolStripMenuItem
+            // 
+            this.trianglesToolStripMenuItem.Name = "trianglesToolStripMenuItem";
+            this.trianglesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.trianglesToolStripMenuItem.Text = "Triangles";
+            this.trianglesToolStripMenuItem.Click += new System.EventHandler(this.trianglesToolStripMenuItem_Click);
+            // 
+            // rectanglesToolStripMenuItem
+            // 
+            this.rectanglesToolStripMenuItem.Name = "rectanglesToolStripMenuItem";
+            this.rectanglesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rectanglesToolStripMenuItem.Text = "Rectangles";
+            this.rectanglesToolStripMenuItem.Click += new System.EventHandler(this.rectanglesToolStripMenuItem_Click);
+            // 
+            // squaresToolStripMenuItem
+            // 
+            this.squaresToolStripMenuItem.Name = "squaresToolStripMenuItem";
+            this.squaresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.squaresToolStripMenuItem.Text = "Squares";
+            this.squaresToolStripMenuItem.Click += new System.EventHandler(this.squaresToolStripMenuItem_Click);
+            // 
+            // rhombsToolStripMenuItem
+            // 
+            this.rhombsToolStripMenuItem.Name = "rhombsToolStripMenuItem";
+            this.rhombsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rhombsToolStripMenuItem.Text = "Rhombs";
+            this.rhombsToolStripMenuItem.Click += new System.EventHandler(this.rhombsToolStripMenuItem_Click);
+            // 
+            // circlesToolStripMenuItem
+            // 
+            this.circlesToolStripMenuItem.Name = "circlesToolStripMenuItem";
+            this.circlesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.circlesToolStripMenuItem.Text = "Circles";
+            this.circlesToolStripMenuItem.Click += new System.EventHandler(this.circlesToolStripMenuItem_Click);
+            // 
+            // biggestAreaToolStripMenuItem
+            // 
+            this.biggestAreaToolStripMenuItem.Name = "biggestAreaToolStripMenuItem";
+            this.biggestAreaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.biggestAreaToolStripMenuItem.Text = "BiggestArea";
+            this.biggestAreaToolStripMenuItem.Click += new System.EventHandler(this.biggestAreaToolStripMenuItem_Click);
+            // 
+            // smallestAreaToolStripMenuItem
+            // 
+            this.smallestAreaToolStripMenuItem.Name = "smallestAreaToolStripMenuItem";
+            this.smallestAreaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.smallestAreaToolStripMenuItem.Text = "SmallestArea";
+            this.smallestAreaToolStripMenuItem.Click += new System.EventHandler(this.smallestAreaToolStripMenuItem_Click);
+            // 
             // FormScene
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,6 +473,13 @@ namespace KursovaRabotaShapePainter
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem trianglesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rectanglesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem squaresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rhombsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem circlesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem biggestAreaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem smallestAreaToolStripMenuItem;
     }
 }
 

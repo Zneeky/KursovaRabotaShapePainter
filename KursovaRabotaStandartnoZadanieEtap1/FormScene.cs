@@ -205,11 +205,11 @@ namespace KursovaRabotaShapePainter
            
         }
 
-        private int CalculateShapesArea()
+        private double CalculateShapesArea()
         {
        
-            int area = _shapes.Select(s => s.Area).Sum();
-            return area;
+            double area = _shapes.Select(s => s.Area).Sum();
+            return Math.Truncate(area*100)/100;
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -477,20 +477,12 @@ namespace KursovaRabotaShapePainter
             {
                 return;
             }
-
-                //for (int s = _shapes.Count - 1; s >= 0; s--)
-                //{
-                //    if (_shapes[s].Selected)
-                //        _shapes.RemoveAt(s);
-                //}
                 _shapes=_shapes
                 .Where(s => s.Selected != true)
                 .ToList();
 
                 toolStripStatusLabelArea.Text = CalculateShapesArea().ToString();
-                Invalidate();
-            
-            
+                Invalidate();           
         }
 
         private void Unselect()
@@ -616,10 +608,7 @@ namespace KursovaRabotaShapePainter
    
         private void SelectShapes(List<Shape> shapes)
         {
-            foreach (var item in shapes)
-            {
-                item.Selected = true;
-            }
+            shapes.ForEach(i => i.Selected = true);
             Invalidate();
         }
         private void centerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -764,6 +753,83 @@ namespace KursovaRabotaShapePainter
             //using (var fs = new FileStream("data", FileMode.Open))
             //    _shapes=(List<Shape>)formatter.Deserialize(fs);
 
+            Invalidate();
+        }
+
+        private void rhombsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Unselect();
+            var selected = _shapes
+                .Where(shape => shape.Tag=="rhombus")
+                .ToList();
+            SelectShapes(selected);
+        }
+
+        private void trianglesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Unselect();
+            var selected = _shapes
+                .Where(shape => shape.Tag == "triangle")
+                .ToList();
+            SelectShapes(selected);
+        }
+
+        private void rectanglesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Unselect();
+            var selected = _shapes
+                .Where(shape => shape.Tag == "rectangle")
+                .ToList();
+            SelectShapes(selected);
+        }
+
+        private void squaresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Unselect();
+            var selected = _shapes
+                .Where(shape => shape.Tag == "square")
+                .ToList();
+            SelectShapes(selected);
+        }
+
+        private void circlesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Unselect();
+            var selected = _shapes
+                .Where(shape => shape.Tag == "circle")
+                .ToList();
+            SelectShapes(selected);
+        }
+
+        private void biggestAreaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Unselect();
+            var shapeBiggestArea = _shapes
+                .OrderBy(s => s.Area)
+                .LastOrDefault();
+            if (shapeBiggestArea == null)
+            {
+                return;
+            }
+            else { shapeBiggestArea.Selected = true; }
+           
+            Invalidate();
+                
+            //SelectShapes(selected);
+        }
+
+        private void smallestAreaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Unselect();
+            var shapeSmallestArea = _shapes
+                .OrderBy(s => s.Area)
+                .FirstOrDefault();
+
+            if (shapeSmallestArea == null)
+            {
+                return;
+            }
+            else { shapeSmallestArea.Selected = true; }
             Invalidate();
         }
     }

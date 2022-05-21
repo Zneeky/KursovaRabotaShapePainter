@@ -23,11 +23,11 @@ namespace ShapesLibrary
                 return "triangle";
             }
         }
-        public override int Area
+        public override double Area
         {
             get
             {
-                return (int)(CalculateArea() / 1428);
+                return CalculateArea() / 1428;
             }
         }
 

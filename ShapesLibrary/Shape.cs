@@ -13,7 +13,7 @@ namespace ShapesLibrary
         public Point Location { get; set; }
         public Color ColorBorder { get; set; }
         public virtual string Tag { get; }
-        public abstract int Area { get; }
+        public abstract double Area { get; }
 
         [NonSerialized]
         private bool _selected;   

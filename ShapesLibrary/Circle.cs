@@ -32,29 +32,19 @@ namespace ShapesLibrary
                 return "circle";
             }
         }
-        public override int Area
+        public override double Area
         {
             get
             {
-                return (int)(CalculateArea() / 1428);
+                return CalculateArea() / 1428;
             }
         }
 
-       
+
         public override void Paint(IGraphics graphics)
         {
             var colorBorder = Selected ? Color.Red : ColorBorder;
             var colorFill = Color.FromArgb(100, ColorBorder);
-            //using (var brush = new SolidBrush(colorFill))
-            //{
-            //    graphics.FillEllipse(brush, Location.X - Radius, Location.Y - Radius, Radius * 2, Radius * 2);
-            //}
-            //using (var pen = new Pen(colorBorder))
-            //{
-            //    pen.Width = 3;
-            //    graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            //    graphics.DrawEllipse(pen, Location.X-Radius, Location.Y-Radius,Radius*2 ,Radius*2 );
-            //}
 
             graphics.DrawCircle(colorBorder, colorFill, Location.X, Location.Y, Radius);
         }
